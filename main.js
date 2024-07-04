@@ -58,6 +58,7 @@ function addTask() {
 
             $('.user_input').val('');
             taskList.push(task);
+            $('.container_bg').css('display', 'flex').fadeOut(500);
         }
         filter();
     });
