@@ -23,10 +23,10 @@ body{
 .container_bg h1 {
     color: white;
 }
-.container_bg .add {
+.container_bg .add_text {
     display: none;
 }
-.container_bg .delete {
+.container_bg .delete_text {
     display: none;
 }
 .container{
