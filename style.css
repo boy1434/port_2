@@ -18,10 +18,10 @@ body{
     gap: 20px;
     max-width: 800px;
 }
-.title::before {
-    content: '';
-    width: 100%;
+.title {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .input_area form{
     display: flex;
@@ -51,6 +51,7 @@ body{
     position: relative;
     border: 1px solid gray;
     border-radius: 10px;
+    align-items: center;
 }
 .task_tabs div {
     width: 50px;
@@ -83,8 +84,37 @@ body{
 }
 .task {
     border-radius: 10px;
-
+    cursor: pointer;
 }
 .task_done {
     text-decoration: line-through;
+}
+.completed {
+    background-color: grey;
+}
+.task:hover {
+    transform: scale(1.05);
+    transition: transform .5s;
+}
+.fa-square-plus:before {
+    font-size: 30px;
+    color: rgb(243, 187, 83);
+}
+.fa-check:before {
+    font-size: 30px;
+    color: rgb(76, 217, 41);
+}
+.fa-delete-left:before  {
+    font-size: 30px;
+    color: rgb(238, 75, 75);
+}
+.fa-rotate-left::before {
+    font-size: 30px;
+    color: rgb(114, 208, 194);
+}
+
+button {
+    border: 0;
+    background-color:transparent;
+    cursor: pointer;
 }

@@ -23,7 +23,7 @@ function modeClick() {
     function moveBar(e) {
         let left = e.currentTarget.offsetLeft + "px";
         let width = e.currentTarget.offsetWidth + "px";
-        let top = (e.currentTarget.offsetTop + e.currentTarget.offsetHeight + tabs.height()) + "px";
+        let top = (e.currentTarget.offsetTop + e.currentTarget.offsetHeight +$('.task_tabs').offsetHeight) + "px";
         
         underLine.stop().animate({
             left: left,
@@ -55,10 +55,11 @@ function addTask() {
         if(userInput == '') {
             alert("할일을 입력해주세요.")
         } else {
+
             $('.user_input').val('');
             taskList.push(task);
         }
-        render();
+        filter();
     });
 }
 
@@ -66,13 +67,13 @@ function render() {
     let list = [];
     if (mode === "all") {
         list = taskList;
-    } else if (mode === "ing" || mode === "end") {
+    } else {
         list = filterList;
     }
     let result = '';
     for (let i = 0; i < list.length; i++) {
         if (list[i].isComplete) {
-            result += `<div class="task">
+            result += `<div class="task completed">
                     <p class="task_done">${list[i].taskContent}</p>
                     <div>
                         <button onclick="returnClick('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
@@ -148,3 +149,4 @@ function filter(e) {
 function createRandomId() {
     return '_' + Math.random().toString(36).substring(2, 9);
 }
+
