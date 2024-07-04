@@ -59,6 +59,7 @@ function addTask() {
             $('.user_input').val('');
             taskList.push(task);
             $('.container_bg').css('display', 'flex').fadeOut(500);
+            $('.add_text').css('display', 'block').fadeOut(500);
         }
         filter();
     });
@@ -105,6 +106,8 @@ function completeClick(id) {
 }
 
 function deleteClick(id) {
+    $('.container_bg').css('display', 'flex').fadeOut(500);
+    $('.delete_text').css('display', 'block').fadeOut(500);
     for (let i = 0; i < taskList.length; i++) {
         if (taskList[i].id === id) {
             taskList.splice(i, 1);
